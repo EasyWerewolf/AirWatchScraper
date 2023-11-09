@@ -27,6 +27,8 @@ function scrapeDataYT() {
             alert("YouTube search input field not found.");
         }
     }, 2000);
+
+    
 }
 
 
@@ -44,7 +46,7 @@ function scrapeData() {
         if (searchInput) {
             searchInput.value = "PDAV298";  //will change this later to implement a list of pda's
             searchInput.dispatchEvent(new Event("input", { bubbles: true }));
-            searchInput.click();
+            //searchInput.click();
 
             // Trigger the "Enter" key press event to perform the search
             const enterKeyEvent = new KeyboardEvent("keydown", {
@@ -71,12 +73,12 @@ function scrapeData() {
         }
     }, 2000);
 
-    // setTimeout(() => {
-
-
-    // })
-
-    // wait for page to fully load
+    setTimeout(() => {
+        const firstElement = document.querySelector('#FriendlyName > a');
+        if (firstElement) {
+            firstElement.click();
+        }        
+    }, 5000);
 }
 
 // Add an event listener for the button click
